@@ -4,3 +4,4 @@ echo $USER
 pwd 
 ls
 date
+free
