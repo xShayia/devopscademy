@@ -1,0 +1,17 @@
+- name: ex2
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: create user
+      shell: sudo useradd devops-anisible || echo "User already exists."
+      register: output
+    - debug: var=output.stdout_lines
+    - name: create folder
+      shell: sudo mkdir -p /home/devops-ansible/devops && sudo mkdir -p /home/devops-ansible/ansible
+      register: output
+    - debug: var=output.stdout_lines
+    - name: install packages
+      shell: sudo apt -y install wget curl htop
+      register: output
+    - debug: var=output.stdout_lines
+

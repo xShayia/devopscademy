@@ -1,0 +1,9 @@
+- name: ex1
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: run script
+      shell: /home/ale/tema2/script.sh
+      register: output
+    - debug: var=output.stdout_lines
+
